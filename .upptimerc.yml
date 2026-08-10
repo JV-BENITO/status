@@ -1,21 +1,20 @@
 owner: JV-BENITO
-    repo: status
+repo: status
 
-    sites:
-    - name: E2A+ — Application
-      url: https://app.lanalysefinanciere.fr
-    - name: E2A+ — API
-      url: https://app.lanalysefinanciere.fr/api/healthz
+sites:
+  - name: E2A+ — Application
+    url: https://app.lanalysefinanciere.fr
+  - name: E2A+ — API
+    url: https://app.lanalysefinanciere.fr/api/healthz
 
-    status-website:
-    name: E2A+ — État du service
-    theme: light
-    introTitle: "État du service E2A+"
-    introMessage: "Consultez ici la disponibilité en temps réel de la plateforme E2A+."
-    navbar:
-      - title: E2A+
-        href: https://app.lanalysefinanciere.fr
+status-website:
+  name: E2A+ — Etat du service
+  theme: light
+  introTitle: Etat du service E2A+
+  introMessage: Consultez ici la disponibilite en temps reel de la plateforme E2A+.
+  navbar:
+    - title: E2A+
+      href: https://app.lanalysefinanciere.fr
 
-    i18n:
-    footer: "© E2A+"
-    
+i18n:
+  footer: "(c) E2A+"
