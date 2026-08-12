@@ -1,0 +1,30 @@
+name: Fix base path
+on:
+  workflow_run:
+    workflows: ["Static Site CI"]
+    types: [completed]
+jobs:
+  fix:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          token: ${{ secrets.GH_PAT || github.token }}
+      - name: Patch base path in index.html
+        run: |
+          sed -i \
+            -e 's|<base href=/ >|<base href=/status/ >|g' \
+            -e 's|baseUrl:""|baseUrl:"/status"|g' \
+            -e "s|register('/service-worker.js')|register('/status/service-worker.js')|g" \
+            -e 's|/client/|/status/client/|g' \
+            -e 's|href=/logo-192\.png|href=/status/logo-192.png|g' \
+            index.html
+      - name: Commit patch
+        run: |
+          git config user.name "Upptime Bot"
+          git config user.email "73812536+upptime-bot@users.noreply.github.com"
+          git add index.html
+          git diff --staged --quiet || git commit -m "fix: correct base path for /status/ subpath [skip ci]"
+          git push
