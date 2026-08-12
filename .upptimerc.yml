@@ -12,7 +12,6 @@ status-website:
   theme: light
   introTitle: Etat du service E2A+
   introMessage: Consultez ici la disponibilite en temps reel de la plateforme E2A+.
-  baseUrl: https://jv-benito.github.io/status
   navbar:
     - title: E2A+
       href: https://app.lanalysefinanciere.fr
