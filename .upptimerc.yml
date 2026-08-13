@@ -8,6 +8,7 @@ sites:
     url: https://app.lanalysefinanciere.fr/api/healthz
 
 status-website:
+  baseUrl: /status
   name: E2A+ — Etat du service
   theme: light
   introTitle: Etat du service E2A+
