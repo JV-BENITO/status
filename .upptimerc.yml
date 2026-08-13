@@ -4,10 +4,8 @@ repo: status
 sites:
   - name: E2A+ — Application
     url: https://app.lanalysefinanciere.fr
-    hide: [avgResponseTime]
   - name: E2A+ — API
     url: https://app.lanalysefinanciere.fr/api/healthz
-    hide: [avgResponseTime]
 
 status-website:
   baseUrl: /status
@@ -15,6 +13,7 @@ status-website:
   theme: light
   introTitle: Etat du service E2A+
   introMessage: Consultez ici la disponibilite en temps reel de la plateforme E2A+.
+  css: ".live-status article > div:last-child { display: none; }"
   navbar:
     - title: E2A+
       href: https://app.lanalysefinanciere.fr
