@@ -4,8 +4,10 @@ repo: status
 sites:
   - name: E2A+ — Application
     url: https://app.lanalysefinanciere.fr
+    hide: [avgResponseTime]
   - name: E2A+ — API
     url: https://app.lanalysefinanciere.fr/api/healthz
+    hide: [avgResponseTime]
 
 status-website:
   baseUrl: /status
